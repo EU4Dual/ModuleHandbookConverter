@@ -2,7 +2,6 @@ package org.example;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,32 +10,97 @@ import java.util.Map;
 import static org.apache.poi.ss.usermodel.Row.MissingCellPolicy.CREATE_NULL_AS_BLANK;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
 
         String inputFolderPath = "src/main/resources/Modulhandbuecher";
         String outputFolderPath = "src/main/outputs";
 
         File inputFolder = new File(inputFolderPath);
+        File outputFolder = new File(outputFolderPath);
         File[] listOfFiles = inputFolder.listFiles();
 
+        if (!outputFolder.exists()) {
+            if (outputFolder.mkdirs()) {
+                System.out.println("Output folder created: " + outputFolder.getAbsolutePath());
+            } else {
+                System.out.println("Failed to create output folder");
+                return; // Exit the program if the folder creation fails
+            }
+        }
+
+        // loop all files in input folder
         if (listOfFiles != null) {
-            for (File file : listOfFiles) {
-                if (file.isFile() && file.getName().endsWith(".xls")) {
-                    rewriteExcel(file, outputFolderPath);
+            int totalFiles = listOfFiles.length;
+            System.out.println("Found " + totalFiles + " files in target folder");
+            System.out.println("Process started");
+            for (int i = 0; i < totalFiles; i++) {
+                if (listOfFiles[i].isFile() && listOfFiles[i].getName().endsWith(".xls")) {
+                    System.out.print("Handling " + (i+1) + "/" + totalFiles + " file...   ");
+                    rewriteExcel(listOfFiles[i], outputFolderPath);
                 }
             }
+            System.out.println("Process completed");
         } else {
-            System.out.println("Invalid input folder path.");
+            System.out.println("Invalid input folder path");
         }
     }
 
+    public static void rewriteExcel(File inputFile, String outputFolderPath) throws IOException {
+
+        try {
+
+            // get module list
+            String fileLocation = inputFile.getAbsolutePath();
+            ArrayList<Map<String, String>> moduleList = readModule(fileLocation);
+
+            // create new workbook and sheet
+            Workbook workbook = new HSSFWorkbook();
+            Sheet sheet = workbook.createSheet("sheet1");
+
+            // write the header row
+            Row headerRow = sheet.createRow(0);
+            int cellIndex = 0;
+            for (String key : moduleList.get(0).keySet()) {
+                Cell cell = headerRow.createCell(cellIndex++);
+                cell.setCellValue(key);
+            }
+
+            // write data rows
+            int rowIndex = 1;
+            for (Map<String, String> module : moduleList) {
+                Row dataRow = sheet.createRow(rowIndex++);
+                cellIndex = 0;
+                for (String key : module.keySet()) {
+                    Cell cell = dataRow.createCell(cellIndex++);
+                    cell.setCellValue(module.get(key));
+                }
+            }
+
+            // create the output file name
+            String outputFileName = getOutputFileName(inputFile.getName());
+
+            // write to output file
+            try (FileOutputStream fileOut = new FileOutputStream(outputFolderPath + File.separator + outputFileName)) {
+                workbook.write(fileOut);
+                System.out.println(outputFileName + " created");
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                workbook.close();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public static ArrayList<Map<String, String>> readModule(String fileLocation) throws IOException, NullPointerException {
 
         FileInputStream file = new FileInputStream(fileLocation);
         Workbook workbook = new HSSFWorkbook(file);
         workbook.setMissingCellPolicy(CREATE_NULL_AS_BLANK);
-
         Sheet sheet = workbook.getSheetAt(0);
 
         ArrayList<Map<String, String>> moduleList = new ArrayList<>();
@@ -172,54 +236,8 @@ public class Main {
         return moduleList;
     }
 
-    public static void rewriteExcel(File inputFile, String outputFolderPath) throws IOException {
-
-        try {
-
-            String fileLocation = inputFile.getAbsolutePath();
-            ArrayList<Map<String, String>> moduleList = readModule(fileLocation);
-
-            Workbook workbook = new HSSFWorkbook();
-            Sheet sheet = workbook.createSheet("sheet1");
-
-            // Write the header row
-            Row headerRow = sheet.createRow(0);
-            int cellIndex = 0;
-            for (String key : moduleList.get(0).keySet()) {
-                Cell cell = headerRow.createCell(cellIndex++);
-                cell.setCellValue(key);
-            }
-
-            // Write data rows
-            int rowIndex = 1;
-            for (Map<String, String> module : moduleList) {
-                Row dataRow = sheet.createRow(rowIndex++);
-                cellIndex = 0;
-                for (String key : module.keySet()) {
-                    Cell cell = dataRow.createCell(cellIndex++);
-                    cell.setCellValue(module.get(key));
-                }
-            }
-
-            // Create the output file name
-            String outputFileName = getOutputFileName(inputFile.getName());
-
-            try (FileOutputStream fileOut = new FileOutputStream(outputFolderPath + File.separator + outputFileName)) {
-                workbook.write(fileOut);
-                System.out.println("Processed file: " + inputFile.getName());
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                workbook.close();
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     private static String getOutputFileName(String originalFileName) {
+        // output filename = {original filename}-rewritten.xls
         int lastDotIndex = originalFileName.lastIndexOf('.');
         if (lastDotIndex != -1) {
             String baseName = originalFileName.substring(0, lastDotIndex);
