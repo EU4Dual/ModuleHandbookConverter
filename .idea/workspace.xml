@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="read module details">
+    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="retrieved all useful cells of a module and stored all modules into a list">
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +44,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }
 }]]></component>
@@ -57,6 +62,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="jdk-16.0.2-corretto-16.0.2-4caba194b151-cab9e76a" />
         <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-a618e4d4" />
         <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
@@ -95,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706188578231</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="retrieved all useful cells of a module and stored all modules into a list">
+      <option name="closed" value="true" />
+      <created>1706204611559</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706204611559</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,20 +128,21 @@
     <MESSAGE value="printed cellType, FontIndex and FillBackgroundColor of all non-empty cells" />
     <MESSAGE value="read the list of all modules" />
     <MESSAGE value="read module details" />
-    <option name="LAST_COMMIT_MESSAGE" value="read module details" />
+    <MESSAGE value="retrieved all useful cells of a module and stored all modules into a list" />
+    <option name="LAST_COMMIT_MESSAGE" value="retrieved all useful cells of a module and stored all modules into a list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>312</line>
-          <option name="timeStamp" value="11" />
+          <line>178</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>181</line>
-          <option name="timeStamp" value="26" />
+          <line>18</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
