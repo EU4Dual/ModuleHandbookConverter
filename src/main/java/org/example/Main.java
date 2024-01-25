@@ -112,15 +112,18 @@ public class Main {
 
         boolean titleFound = false;
 
+        // loop all rows
         while (rowIndex < sheet.getLastRowNum()) {
 
             Row row = sheet.getRow(rowIndex);
 
+            // skip empty row
             if (row == null) {
                 rowIndex++;
                 continue;
             }
 
+            // loop all cells in a row
             for (int cellIndex = 0; cellIndex < row.getLastCellNum(); cellIndex++) {
 
                 Cell cell = row.getCell(cellIndex);
@@ -161,7 +164,7 @@ public class Main {
 
                             cell = row.getCell(cellIndex);
 
-                            // bold black
+                            // found bold black cell (10) + regular cell (12) below
                             if (cell.getCellStyle().getFontIndex() == 10 && sheet.getRow(rowIndex+1).getCell(cellIndex).getCellStyle().getFontIndex() == 12) {
                                 key = cell.getStringCellValue();
                                 Cell valueCell = sheet.getRow(rowIndex + 1).getCell(cellIndex);
@@ -171,6 +174,7 @@ public class Main {
                                     value = Double.toString(valueCell.getNumericCellValue());
                                 }
 
+                                // check if more than one regular cell is under this key cell
                                 int i = 2;
                                 if (i > scanLineNum) {
                                     while (sheet.getRow(rowIndex + i).getCell(cellIndex).getCellStyle().getFontIndex() == 12) {
@@ -198,7 +202,7 @@ public class Main {
                                 scanLineNum = (Math.max(i, scanLineNum));
                             } else
 
-                            // bold burgundy
+                            // found bold burgundy cell (9) and regular cell (12) below
                             if (cell.getCellStyle().getFontIndex() == 9 && sheet.getRow(rowIndex+1).getCell(cellIndex).getCellStyle().getFontIndex() == 12) {
                                 key = cell.getStringCellValue();
                                 Cell valueCell = sheet.getRow(rowIndex + 1).getCell(cellIndex);
@@ -208,6 +212,7 @@ public class Main {
                                     value = Double.toString(valueCell.getNumericCellValue());
                                 }
 
+                                // check if more than one regular cell is under this key cell
                                 int i = 2;
                                 while (sheet.getRow(rowIndex + i).getCell(cellIndex).getCellStyle().getFontIndex() == 12) {
                                     valueCell = sheet.getRow(rowIndex + i++).getCell(cellIndex);
@@ -218,10 +223,10 @@ public class Main {
                                     }
                                 }
                                 module.put(key, value);
-
                                 scanLineNum = (Math.max(i, scanLineNum));
                             }
                         }
+                        // skip scanned rows
                         rowIndex += scanLineNum;
                         cell = sheet.getRow(rowIndex).getCell(0);
                     }
