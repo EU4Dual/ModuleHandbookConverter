@@ -1,20 +1,23 @@
 package org.example;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-import static org.apache.poi.ss.usermodel.Row.MissingCellPolicy.CREATE_NULL_AS_BLANK;
+class ValidFile {
+    String type;
+    File file;
+}
 
 public class Main {
 
+    public static final String TypeXls = ".xls";
+    public static final String TypeXlsx = ".xlsx";
+    public static final String TypeCsv = ".csv";
+
     public static void main(String[] args) throws IOException {
 
-        String inputFolderPath = "src/main/resources/Modulhandbuecher";
-        String outputFolderPath = "src/main/outputs";
+        String inputFolderPath = "src/main/resources/excel";
+        String outputFolderPath = "src/main/outputs/excel";
 
         File inputFolder = new File(inputFolderPath);
         File outputFolder = new File(outputFolderPath);
@@ -31,19 +34,36 @@ public class Main {
 
         // loop all files in input folder
         if (listOfFiles != null) {
-            File[] validFiles = new File[listOfFiles.length];
+            ArrayList<ValidFile> validFileList = new ArrayList<>();
             int validFilesCount = 0;
+
             for (File file : listOfFiles) {
-                if (file.getName().endsWith(".xls")) {
-                    validFiles[validFilesCount++] = file;
+                if (file.getName().endsWith(TypeXls)) {
+                    ValidFile validFile = new ValidFile();
+                    validFile.type = TypeXls;
+                    validFile.file = file;
+                    validFileList.add(validFile);
+                } else if (file.getName().endsWith(TypeXlsx)) {
+                    ValidFile validFile = new ValidFile();
+                    validFile.type = TypeXlsx;
+                    validFile.file = file;
+                    validFileList.add(validFile);
+                } else if (file.getName().endsWith(TypeCsv)) {
+                    ValidFile validFile = new ValidFile();
+                    validFile.type = TypeCsv;
+                    validFile.file = file;
+                    validFileList.add(validFile);
                 }
             }
-            System.out.println("Found " + validFilesCount + " valid files in target folder");
+            System.out.println("Found " + validFileList.size() + " valid files in target folder");
             System.out.println("Process started");
-            for (int i = 0; i < validFilesCount; i++) {
-                if (validFiles[i].isFile() && validFiles[i].getName().endsWith(".xls")) {
-                    System.out.print("Handling " + (i+1) + "/" + validFilesCount + " file...   ");
-                    ExcelConverter.rewriteExcel(validFiles[i], outputFolderPath);
+            int count = 1;
+            for (ValidFile vf : validFileList) {
+                System.out.print("Handling " + (count++) + "/" + validFileList.size() + " file...   ");
+                if (vf.type.equals(TypeXls)) {
+                    ExcelConverter.rewriteXls(vf, outputFolderPath);
+                } else if (vf.type.equals(TypeXlsx)) {
+                    ExcelConverter.rewriteXlsx(vf, outputFolderPath);
                 }
             }
             System.out.println("Process completed");

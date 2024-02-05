@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="added readme">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="added input file type checking">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CsvConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/HDH-Informatik-Allgemeine Informatik.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/HDH-Informatik-Informationstechnik.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/KA-Informatik-Informatik.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/MOS-Informatik-Angewandte-Informatik.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/Modulhandbuch_TIF.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/STG-Informatik-Informatik.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/HDH-Informatik-Allgemeine Informatik.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/HDH-Informatik-Informationstechnik.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/KA-Informatik-Informatik.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/MOS-Informatik-Angewandte-Informatik.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/STG-Informatik-Informatik.xls" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kathy.chan\Documents\Projects\ModuleHandbookConverter" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706255651596</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added input file type checking">
+      <option name="closed" value="true" />
+      <created>1706797861474</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706797861474</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +194,23 @@
     <MESSAGE value="printed progress in console" />
     <MESSAGE value="added comments" />
     <MESSAGE value="added readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="added readme" />
+    <MESSAGE value="added input file type checking" />
+    <option name="LAST_COMMIT_MESSAGE" value="added input file type checking" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
