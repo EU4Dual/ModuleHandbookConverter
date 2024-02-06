@@ -16,26 +16,30 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        String inputFolderPath = "src/main/resources/excel";
-        String outputFolderPath = "src/main/outputs/excel";
+//        String inputFolderPath = "src/main/resources/excel";
+//        String outputFolderPath = "src/main/outputs/excel";
+
+        String inputFolderPath = "src/main/resources/csv";
+        String outputFolderPath = "src/main/outputs/csv";
 
         File inputFolder = new File(inputFolderPath);
         File outputFolder = new File(outputFolderPath);
         File[] listOfFiles = inputFolder.listFiles();
 
         if (!outputFolder.exists()) {
+            // create the output folder if not already exist
             if (outputFolder.mkdirs()) {
                 System.out.println("Output folder created: " + outputFolder.getAbsolutePath());
             } else {
+                // exit the program if the folder creation fails
                 System.out.println("Failed to create output folder");
-                return; // Exit the program if the folder creation fails
+                return;
             }
         }
 
         // loop all files in input folder
         if (listOfFiles != null) {
             ArrayList<ValidFile> validFileList = new ArrayList<>();
-            int validFilesCount = 0;
 
             for (File file : listOfFiles) {
                 if (file.getName().endsWith(TypeXls)) {
@@ -59,11 +63,23 @@ public class Main {
             System.out.println("Process started");
             int count = 1;
             for (ValidFile vf : validFileList) {
-                System.out.print("Handling " + (count++) + "/" + validFileList.size() + " file...   ");
                 if (vf.type.equals(TypeXls)) {
-                    ExcelConverter.rewriteXls(vf, outputFolderPath);
+                    System.out.print("Handling " + (count++) + "/" + validFileList.size() + " file...   ");
+                    ExcelConverter.rewriteXls(vf.file, outputFolderPath);
                 } else if (vf.type.equals(TypeXlsx)) {
-                    ExcelConverter.rewriteXlsx(vf, outputFolderPath);
+                    System.out.print("Handling " + (count++) + "/" + validFileList.size() + " file...   ");
+                    ExcelConverter.rewriteXlsx(vf.file, outputFolderPath);
+                } else if (vf.type.equals(TypeCsv)) {
+                    File moduldaten = null;
+                    File modultexte = null;
+                    if (validFileList.get(0).file.getName().startsWith("moduldaten")) {
+                        moduldaten = validFileList.get(0).file;
+                        modultexte = validFileList.get(1).file;
+                    } else {
+                        moduldaten = validFileList.get(1).file;
+                        modultexte = validFileList.get(0).file;
+                    }
+                    CsvConverter.rewriteCsv(moduldaten, modultexte, outputFolderPath);
                 }
             }
             System.out.println("Process completed");

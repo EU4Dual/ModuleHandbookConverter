@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="added input file type checking">
+    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="modified extractor to handle both .xls and .xlsx">
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CsvConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/HDH-Informatik-Allgemeine Informatik.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/HDH-Informatik-Informationstechnik.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/KA-Informatik-Informatik.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/MOS-Informatik-Angewandte-Informatik.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/Modulhandbuch_TIF.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/excel/STG-Informatik-Informatik.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/HDH-Informatik-Allgemeine Informatik.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/HDH-Informatik-Informationstechnik.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/KA-Informatik-Informatik.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/MOS-Informatik-Angewandte-Informatik.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Modulhandbuecher/STG-Informatik-Informatik.xls" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706797861474</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="modified extractor to handle both .xls and .xlsx">
+      <option name="closed" value="true" />
+      <created>1707138210291</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707138210291</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,20 +193,31 @@
     <MESSAGE value="added comments" />
     <MESSAGE value="added readme" />
     <MESSAGE value="added input file type checking" />
-    <option name="LAST_COMMIT_MESSAGE" value="added input file type checking" />
+    <MESSAGE value="modified extractor to handle both .xls and .xlsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified extractor to handle both .xls and .xlsx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>42</line>
+          <line>46</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java</url>
-          <line>73</line>
+          <line>70</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/CsvConverter.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/CsvConverter.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

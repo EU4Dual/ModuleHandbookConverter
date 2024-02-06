@@ -17,15 +17,12 @@ import static org.apache.poi.ss.usermodel.Row.MissingCellPolicy.CREATE_NULL_AS_B
 
 public class ExcelConverter {
 
-    public static void rewriteXls(ValidFile inputFile, String outputFolderPath) throws IOException {
+    public static void rewriteXls(File inputFile, String outputFolderPath) throws IOException {
 
         try {
-
-            String type = inputFile.type;
-            File file = inputFile.file;
             // get module list
-            String fileLocation = file.getAbsolutePath();
-            ArrayList<Map<String, String>> moduleList = readXlsModule(type, file);
+            String fileLocation = inputFile.getAbsolutePath();
+            ArrayList<Map<String, String>> moduleList = readXlsModule(fileLocation);
 
             // create new workbook and sheet
             Workbook workbook = new HSSFWorkbook();
@@ -51,7 +48,7 @@ public class ExcelConverter {
             }
 
             // create the output file name
-            String outputFileName = getOutputFileName(file.getName());
+            String outputFileName = getOutputFileName(inputFile.getName());
 
             // write to output file
             try (FileOutputStream fileOut = new FileOutputStream(outputFolderPath + File.separator + outputFileName)) {
@@ -69,9 +66,9 @@ public class ExcelConverter {
 
     }
 
-    public static ArrayList<Map<String, String>> readXlsModule(String type, File file) throws IOException, NullPointerException {
+    public static ArrayList<Map<String, String>> readXlsModule(String fileLocation) throws IOException, NullPointerException {
 
-        FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
+        FileInputStream fileInputStream = new FileInputStream(fileLocation);
         Workbook workbook = new HSSFWorkbook(fileInputStream);
         workbook.setMissingCellPolicy(CREATE_NULL_AS_BLANK);
         Sheet sheet = workbook.getSheetAt(0);
@@ -214,15 +211,13 @@ public class ExcelConverter {
         return moduleList;
     }
 
-    public static void rewriteXlsx(ValidFile inputFile, String outputFolderPath) throws IOException {
+    public static void rewriteXlsx(File inputFile, String outputFolderPath) throws IOException {
 
         try {
 
-            String type = inputFile.type;
-            File file = inputFile.file;
             // get module list
-            String fileLocation = file.getAbsolutePath();
-            ArrayList<Map<String, String>> moduleList = readXlsxModule(type, file);
+            String fileLocation = inputFile.getAbsolutePath();
+            ArrayList<Map<String, String>> moduleList = readXlsxModule(fileLocation);
 
             // create new workbook and sheet
             XSSFWorkbook workbook = new XSSFWorkbook();
@@ -248,7 +243,7 @@ public class ExcelConverter {
             }
 
             // create the output file name
-            String outputFileName = getOutputFileName(file.getName());
+            String outputFileName = getOutputFileName(inputFile.getName());
 
             // write to output file
             try (FileOutputStream fileOut = new FileOutputStream(outputFolderPath + File.separator + outputFileName)) {
@@ -266,9 +261,9 @@ public class ExcelConverter {
 
     }
 
-    public static ArrayList<Map<String, String>> readXlsxModule(String type, File file) throws IOException, NullPointerException {
+    public static ArrayList<Map<String, String>> readXlsxModule(String fileLocation) throws IOException, NullPointerException {
 
-        FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
+        FileInputStream fileInputStream = new FileInputStream(fileLocation);
         XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
         workbook.setMissingCellPolicy(CREATE_NULL_AS_BLANK);
         XSSFSheet sheet = workbook.getSheetAt(0);
@@ -412,14 +407,14 @@ public class ExcelConverter {
     }
 
     private static String getOutputFileName(String originalFileName) {
-        // output filename = {original filename}-rewritten.xls
+        // output filename = {original filename}-reformatted.xls
         int lastDotIndex = originalFileName.lastIndexOf('.');
         if (lastDotIndex != -1) {
             String baseName = originalFileName.substring(0, lastDotIndex);
             String extension = originalFileName.substring(lastDotIndex);
-            return baseName + "-rewritten" + extension;
+            return baseName + "-reformatted" + extension;
         } else {
-            return originalFileName + "-rewritten";
+            return originalFileName + "-reformatted";
         }
     }
 }
