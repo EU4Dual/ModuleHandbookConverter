@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="modified extractor to handle both .xls and .xlsx">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CsvConverter.java" afterDir="false" />
+    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="added extractor to handle .csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ExcelConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707138210291</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added extractor to handle .csv">
+      <option name="closed" value="true" />
+      <created>1707205439132</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707205439132</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,14 +199,15 @@
     <MESSAGE value="added readme" />
     <MESSAGE value="added input file type checking" />
     <MESSAGE value="modified extractor to handle both .xls and .xlsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified extractor to handle both .xls and .xlsx" />
+    <MESSAGE value="added extractor to handle .csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="added extractor to handle .csv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>46</line>
+          <line>63</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
