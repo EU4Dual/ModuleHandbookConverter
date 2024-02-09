@@ -15,12 +15,14 @@ public class Main {
     public static final String TypeXlsx = ".xlsx";
     public static final String TypeCsv = ".csv";
 
+    public static final String TypePdf = ".pdf";
+
     public static void main(String[] args) throws IOException {
 
         String inputFolderPath, outputFolderPath;
-        boolean isExcel = true;
+        String fileType = TypeXls;
 
-        System.out.print("Please enter file type [1]Excel or [2]CSV: ");
+        System.out.print("Please enter file type [1]Excel or [2]CSV or [3]PDF: ");
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextLine()) {
             case "1":
@@ -30,9 +32,15 @@ public class Main {
                 break;
             case "2":
                 System.out.println("[2]CSV is entered");
-                isExcel = false;
+                fileType = TypeCsv;
                 inputFolderPath = "src/main/resources/csv";
                 outputFolderPath = "src/main/outputs/csv";
+                break;
+            case "3":
+                System.out.println("[3]PDF is entered");
+                fileType = TypePdf;
+                inputFolderPath = "src/main/resources/pdf";
+                outputFolderPath = "src/main/outputs/pdf";
                 break;
             default:
                 System.out.println("Invalid input. Process ended.");
@@ -76,11 +84,13 @@ public class Main {
                     validFileList.add(validFile);
                 }
             }
-            System.out.println("Found " + validFileList.size() + " valid files in target folder");
+            if (!fileType.equals(TypePdf)) {
+                System.out.println("Found " + validFileList.size() + " valid files in target folder");
+            }
             System.out.println("Process started");
             int count = 1;
             // input files are Excel
-            if (isExcel) {
+            if (fileType.equals(TypeXls)) {
                 for (ValidFile vf : validFileList) {
                     if (vf.type.equals(TypeXls)) {
                         System.out.print("Handling " + (count++) + "/" + validFileList.size() + " file...   ");
@@ -90,8 +100,8 @@ public class Main {
                         ExcelConverter.rewriteXlsx(vf.file, outputFolderPath);
                     }
                 }
-            // input files are CSV
-            } else {
+                // input files are CSV
+            } else if (fileType.equals(TypeCsv)) {
                 File moduldaten = null;
                 File modultexte = null;
                 if (validFileList.get(0).file.getName().startsWith("moduldaten")) {
@@ -102,6 +112,16 @@ public class Main {
                     modultexte = validFileList.get(0).file;
                 }
                 CsvConverter.rewriteCsv(moduldaten, modultexte, outputFolderPath);
+                // input files are PDF
+            } else if (fileType.equals(TypePdf)) {
+                PdfConverter.crawlPdfLinks();
+                for (ValidFile vf : validFileList) {
+                    if (vf.type.equals(TypePdf)) {
+                        System.out.print("Handling " + (count++) + "/" + validFileList.size() + " file...   ");
+                        // PdfConverter.rewritePdf(vf.file, outputFolderPath);
+
+                    }
+                }
             }
             System.out.println("Process completed");
         } else {
