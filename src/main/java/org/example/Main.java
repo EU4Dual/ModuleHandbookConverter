@@ -17,12 +17,14 @@ public class Main {
 
     public static final String TypePdf = ".pdf";
 
+    public static final String TypeHtml = ".html";
+
     public static void main(String[] args) throws IOException {
 
         String inputFolderPath, outputFolderPath;
         String fileType = TypeXls;
 
-        System.out.print("Please enter file type [1]Excel or [2]CSV or [3]PDF: ");
+        System.out.print("Please enter file type [1]Excel or [2]CSV or [3]PDF or [4]HTML: ");
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextLine()) {
             case "1":
@@ -41,6 +43,12 @@ public class Main {
                 fileType = TypePdf;
                 inputFolderPath = "src/main/resources/pdf";
                 outputFolderPath = "src/main/outputs/pdf";
+                break;
+            case "4":
+                System.out.println("[4]HTML is entered");
+                fileType = TypeHtml;
+                inputFolderPath = "src/main/resources/html";
+                outputFolderPath = "src/main/outputs/html";
                 break;
             default:
                 System.out.println("Invalid input. Process ended.");
@@ -122,6 +130,8 @@ public class Main {
 
                     }
                 }
+            } else if (fileType.equals(TypeHtml)) {
+                HtmlConverter.outputXls();
             }
             System.out.println("Process completed");
         } else {
