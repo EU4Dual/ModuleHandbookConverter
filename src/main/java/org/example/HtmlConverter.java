@@ -52,7 +52,7 @@ public class HtmlConverter {
             }
 
             // create the output file name
-            String outputFileName = "output.xls";
+            String outputFileName = "output2.xls";
 
             // write to output file
             try (FileOutputStream fileOut = new FileOutputStream("src/main/outputs/html" + File.separator + outputFileName)) {
@@ -76,7 +76,7 @@ public class HtmlConverter {
 
         try {
             // Load HTML file into Jsoup Document
-            Document doc = Jsoup.parse(new File("src/main/resources/html/Automation.html"), "UTF-8");
+            Document doc = Jsoup.parse(new File("src/main/resources/html/FN_Elektrotechnik_Automation.html"), "UTF-8");
 
             // Create a map to store key-value pairs
             Map<String, String> tempMap = new HashMap<>();
