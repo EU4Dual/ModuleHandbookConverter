@@ -16,9 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class HtmlConverter {
 
@@ -78,96 +76,236 @@ public class HtmlConverter {
             // Load HTML file into Jsoup Document
             Document doc = Jsoup.parse(new File("src/main/resources/html/FN_Elektrotechnik_Automation.html"), "UTF-8");
 
-            // Create a map to store key-value pairs
-            Map<String, String> tempMap = new HashMap<>();
-
             // Select all <div> elements
             Elements divs = doc.select("div");
 
             String key = "";
             String value = "";
 
-            boolean titleFound = false;
+            boolean skipFirst = true;
 
             // Process each <div>
             for (int divIndex = 0; divIndex < divs.size(); divIndex++) {
 
                 Element div = divs.get(divIndex);
                 String className = div.className();
+                String text = div.text();
 
                 if (!className.startsWith("c")) {
                     continue;
                 }
 
                 // found German module title
-                if (className.equals("c x3 y48 w4 hf")) {
+                if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf")) {
 
-                    titleFound = true;
+//                // found new module
+//                if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw3\\sh1")) {
 
+                    // Create a map to store key-value pairs
                     Map<String, String> module = new HashMap<>();
+                    Map<String, String> tempModuleKey = new HashMap<>();
+                    Map<String, String> tempModuleValue = new HashMap<>();
+
+//                    // Studienakademie
+//                    key = "STUDIENAKADEMIE";
+//                    value = div.text();
+//                    module.put(key, value);
+//                    divIndex += 2;
+//
+//                    // Studienrichtung
+//                    div = divs.get(divIndex);
+//                    key = "STUDIENRICHTUNG_DE";
+//                    value = div.text().split(" // ")[0];
+//                    module.put(key, value);
+//                    key = "STUDIENRICHTUNG_EN";
+//                    value = div.text().split(" // ")[1];
+//                    module.put(key, value);
+//                    divIndex += 2;
+//
+//                    // Studiengang
+//                    div = divs.get(divIndex);
+//                    key = "STUDIENGANG_DE";
+//                    value = div.text().split(" // ")[0];
+//                    module.put(key, value);
+//                    key = "STUDIENGANG_EN";
+//                    value = div.text().split(" // ")[1];
+//                    module.put(key, value);
+//                    divIndex += 2;
+//
+//                    // Studienbereich
+//                    div = divs.get(divIndex);
+//                    key = "STUDIENBEREICH_DE";
+//                    value = div.text().split(" // ")[0];
+//                    module.put(key, value);
+//                    key = "STUDIENBEREICH_EN";
+//                    value = div.text().split(" // ")[1];
+//                    module.put(key, value);
+//                    divIndex += 2;
 
                     // german module title
-                    key = "MODULBEZEICHNUNG (Deutsch)";
+                    div = divs.get(divIndex);
+                    key = "MODULBEZEICHNUNG_DE";
                     value = div.text().split(" \\(")[0];
                     module.put(key, value);
                     divIndex += 2;
 
                     // english module title
                     div = divs.get(divIndex);
-                    key = "MODULBEZEICHNUNG (Englisch)";
+                    key = "MODULBEZEICHNUNG_EN";
                     value = div.text();
                     module.put(key, value);
                     divIndex += 2;
 
+                    // set all keys with blank values
+                    String[] allKeys = new AllKeys().allKeys;
+                    List<String> keyList = Arrays.asList(allKeys);
+                    for (String eachKey : keyList) {
+                        module.put(eachKey, "");
+                    }
+
+                    String[] sectionHeader = new AllKeys().sectionHeader;
+                    List<String> sectionList = Arrays.asList(sectionHeader);
+
+                    boolean meetGermanTitle = false;
+                    boolean meetSectionStart = false;
+                    boolean meetSectionEnd = false;
+
                     // scan module details
-                    while (divIndex < divs.size()) {
+                    while (divIndex < divs.size() && !meetGermanTitle) {
 
                         div = divs.get(divIndex);
                         className = div.className();
+                        text = div.text();
 
                         if (!className.startsWith("c")) {
                             divIndex++;
                             continue;
                         }
 
-                        // found new German title
-                        if (className.equals("c x3 y48 w4 hf")) {
+                        // encounter next German title
+                        if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf")) {
                             divIndex--;
-                            break;
+                            meetGermanTitle = true;
+                            meetSectionEnd = true;
                         } else {
-                            // Check if the class name matches the expected pattern
                             if (className.matches("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)")) {
-                                // Extract x, y, w and h values from the class name
-                                String[] values = div.className().replaceAll("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)", "$1 $2 $3 $4").split(" ");
-                                int x = Integer.parseInt(values[0], 16);
-                                int y = Integer.parseInt(values[1], 16);
-                                String w = values[2];
-                                String h = values[3];
 
-                                // Get the text content
-                                String text = div.text();
-
-                                // Form the key for the map
-                                String tempKey = x + " " + y + " " + w;
-
-                                // Check if there's a pair above
-                                String aboveKey = x + " " + (y - 1) + " " + w;
-                                if (tempMap.containsKey(aboveKey)) {
-                                    // Form the key for the final map
-                                    String finalKey = tempMap.get(aboveKey);
-
-                                    // Add the pair to the final data map
-                                    module.put(finalKey, text);
+                                // encounter section
+                                if (sectionList.contains(text)) {
+                                    if (!meetSectionStart) {
+                                        meetSectionStart = true;
+                                    } else {
+                                        meetSectionEnd = true;
+                                    }
                                 } else {
-                                    // Add the current <div> as a potential key to the map
-                                    tempMap.put(tempKey, text);
+                                    // encounter regular cells
+                                    // Extract x, y, w and h values from the class name
+                                    String[] values = div.className().replaceAll("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)", "$1 $2 $3 $4").split(" ");
+                                    int x = Integer.parseInt(values[0], 16);
+                                    int y = Integer.parseInt(values[1], 16);
+                                    int w = Integer.parseInt(values[2], 16);
+                                    int h = Integer.parseInt(values[3], 16);
+                                    String tempKey = x + " " + y;
+
+                                    if (keyList.contains(text)) {
+                                        tempModuleKey.put(tempKey, text);
+                                    } else {
+                                        tempModuleValue.put(tempKey, text);
+                                    }
                                 }
                             }
-                            divIndex++;
+                        }
+                        divIndex++;
+
+                        if (meetSectionEnd) {
+                            for (Map.Entry<String, String> keyEntry : tempModuleKey.entrySet()) {
+                                String[] keyCoords = keyEntry.getKey().split(" ");
+                                int keyX = Integer.parseInt(keyCoords[0]);
+
+                                StringBuilder concatenatedValues = new StringBuilder();
+
+                                for (Map.Entry<String, String> valueEntry : tempModuleValue.entrySet()) {
+                                    String[] valueCoords = valueEntry.getKey().split(" ");
+                                    int valueX = Integer.parseInt(valueCoords[0]);
+
+                                    if (valueX == keyX) {
+                                        if (concatenatedValues.length() > 0) {
+                                            concatenatedValues.append("; ");
+                                        }
+                                        concatenatedValues.append(valueEntry.getValue());
+                                    }
+                                }
+
+                                module.put(keyEntry.getValue(), concatenatedValues.toString());
+
+                            }
+                            tempModuleKey.clear();
+                            tempModuleValue.clear();
+
+                            meetSectionEnd = false;
                         }
 
                     }
                     moduleList.add(module);
+                    divIndex--;
+//                        // Check if the class name matches the expected pattern
+//                        if (className.matches("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)")) {
+//
+//                            // Extract x, y, w and h values from the class name
+//                            String[] values = div.className().replaceAll("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)", "$1 $2 $3 $4").split(" ");
+//                            int x = Integer.parseInt(values[0], 16);
+//                            int y = Integer.parseInt(values[1], 16);
+//                            int w = Integer.parseInt(values[2], 16);
+//                            int h = Integer.parseInt(values[3], 16);
+//
+//                            // Get the text content
+//                            //String text = div.text();
+//
+//                            // Form the key for the map
+//                            String tempKey = x + " " + y;
+//
+//
+//                            if (sectionList.contains(text)) {
+//
+//                                String sectionStartKey = x + " " + y;
+//
+//
+//                            }
+//
+//                            if (keyList.contains(text)) {
+//                                tempModuleKey.put(tempKey, text);
+//                            } else {
+//                                tempModuleValue.put(tempKey, text);
+//                            }
+//
+////                                tempModuleKey.put(tempKey, text);
+////
+////                                // Check if there's a pair above
+////                                String aboveKey = x + " " + (y - 1) + " " + w + " " + h;
+////
+////                                if (tempModuleKey.containsKey(aboveKey) && keyList.contains(tempModuleKey.get(aboveKey))) {
+////                                    // Form the key for the final map
+////                                    String finalKey = tempModuleKey.get(aboveKey);
+////
+////                                    // Add the pair to the final data map
+////                                    module.put(finalKey, text);
+////                                } else {
+////                                    // Add the current <div> as a potential key to the map
+////                                    tempModuleKey.put(tempKey, text);
+////                                }
+//                        }
+//                        divIndex++;
+
+
+
+
+
+
+//                    if (skipFirst) {
+//                        skipFirst = false;
+//                        continue;
+//                    }
+
                 }
 
             }
