@@ -82,8 +82,6 @@ public class HtmlConverter {
             String key = "";
             String value = "";
 
-            boolean skipFirst = true;
-
             // Process each <div>
             for (int divIndex = 0; divIndex < divs.size(); divIndex++) {
 
@@ -96,10 +94,7 @@ public class HtmlConverter {
                 }
 
                 // found German module title
-                if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf")) {
-
-//                // found new module
-//                if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw3\\sh1")) {
+                if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf") && text.matches(".+\\s\\(.+\\)")) {
 
                     // Create a map to store key-value pairs
                     Map<String, String> module = new HashMap<>();
@@ -144,14 +139,14 @@ public class HtmlConverter {
 
                     // german module title
                     div = divs.get(divIndex);
-                    key = "MODULBEZEICHNUNG_DE";
+                    key = "MODULBEZEICHNUNG (DEUTSCH)";
                     value = div.text().split(" \\(")[0];
                     module.put(key, value);
                     divIndex += 2;
 
                     // english module title
                     div = divs.get(divIndex);
-                    key = "MODULBEZEICHNUNG_EN";
+                    key = "MODULBEZEICHNUNG (ENLISCH)";
                     value = div.text();
                     module.put(key, value);
                     divIndex += 2;
@@ -215,7 +210,7 @@ public class HtmlConverter {
                             System.out.println("here");
                         }
                         // encounter next German title
-                        if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf")) {
+                        if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf") && text.matches(".+\\s\\(.+\\)")) {
                             divIndex--;
                             meetGermanTitle = true;
                             meetSectionEnd = true;
@@ -297,63 +292,7 @@ public class HtmlConverter {
                     }
                     moduleList.add(module);
                     divIndex--;
-//                        // Check if the class name matches the expected pattern
-//                        if (className.matches("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)")) {
-//
-//                            // Extract x, y, w and h values from the class name
-//                            String[] values = div.className().replaceAll("c\\sx([0-9a-f]+)\\sy([0-9a-f]+)\\sw([0-9a-f]+)\\sh([0-9a-f]+)", "$1 $2 $3 $4").split(" ");
-//                            int x = Integer.parseInt(values[0], 16);
-//                            int y = Integer.parseInt(values[1], 16);
-//                            int w = Integer.parseInt(values[2], 16);
-//                            int h = Integer.parseInt(values[3], 16);
-//
-//                            // Get the text content
-//                            //String text = div.text();
-//
-//                            // Form the key for the map
-//                            String tempKey = x + " " + y;
-//
-//
-//                            if (sectionList.contains(text)) {
-//
-//                                String sectionStartKey = x + " " + y;
-//
-//
-//                            }
-//
-//                            if (keyList.contains(text)) {
-//                                tempModuleKey.put(tempKey, text);
-//                            } else {
-//                                tempModuleValue.put(tempKey, text);
-//                            }
-//
-////                                tempModuleKey.put(tempKey, text);
-////
-////                                // Check if there's a pair above
-////                                String aboveKey = x + " " + (y - 1) + " " + w + " " + h;
-////
-////                                if (tempModuleKey.containsKey(aboveKey) && keyList.contains(tempModuleKey.get(aboveKey))) {
-////                                    // Form the key for the final map
-////                                    String finalKey = tempModuleKey.get(aboveKey);
-////
-////                                    // Add the pair to the final data map
-////                                    module.put(finalKey, text);
-////                                } else {
-////                                    // Add the current <div> as a potential key to the map
-////                                    tempModuleKey.put(tempKey, text);
-////                                }
-//                        }
-//                        divIndex++;
 
-
-
-
-
-
-//                    if (skipFirst) {
-//                        skipFirst = false;
-//                        continue;
-//                    }
 
                 }
 

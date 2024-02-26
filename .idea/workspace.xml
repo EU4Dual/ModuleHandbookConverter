@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="modified algo to scan cell within section headers">
+    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="handled section span over two pages issue; handled missing loop in last module issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java" afterDir="false" />
     </list>
@@ -214,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708704353284</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="handled section span over two pages issue; handled missing loop in last module issue">
+      <option name="closed" value="true" />
+      <created>1708933397102</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1708933397102</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,7 +253,8 @@
     <MESSAGE value="added html parser" />
     <MESSAGE value="added script to batch convert PDFs to HTMLs" />
     <MESSAGE value="modified algo to scan cell within section headers" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified algo to scan cell within section headers" />
+    <MESSAGE value="handled section span over two pages issue; handled missing loop in last module issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="handled section span over two pages issue; handled missing loop in last module issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -272,12 +281,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java</url>
-          <line>109</line>
+          <line>104</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java</url>
-          <line>252</line>
+          <line>247</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
