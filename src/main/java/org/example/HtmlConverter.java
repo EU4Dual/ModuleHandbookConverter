@@ -177,11 +177,43 @@ public class HtmlConverter {
                         className = div.className();
                         text = div.text();
 
+                        if (divIndex == divs.size()-1) {
+                            for (Map.Entry<String, String> keyEntry : tempModuleKey.entrySet()) {
+                                String[] keyCoords = keyEntry.getKey().split(" ");
+                                int keyX = Integer.parseInt(keyCoords[0]);
+
+                                StringBuilder concatenatedValues = new StringBuilder();
+
+                                for (Map.Entry<String, String> valueEntry : tempModuleValue.entrySet()) {
+                                    String[] valueCoords = valueEntry.getKey().split(" ");
+                                    int valueX = Integer.parseInt(valueCoords[0]);
+
+                                    if (valueX == keyX || keyX == 0) {
+                                        if (concatenatedValues.length() > 0) {
+                                            concatenatedValues.append("; ");
+                                        }
+                                        concatenatedValues.append(valueEntry.getValue());
+                                    }
+                                }
+
+                                module.put(keyEntry.getValue(), concatenatedValues.toString());
+
+                            }
+                        }
+
+                        if (text.matches("Stand\\svom\\s\\d{2}.\\d{2}.\\d{4}") || text.matches("\\S+\\s\\/\\/\\sSeite\\s\\d+")) {
+                            divIndex++;
+                            continue;
+                        }
+
                         if (!className.startsWith("c")) {
                             divIndex++;
                             continue;
                         }
 
+                        if (text.equals("FACHKOMPETENZ")) {
+                            System.out.println("here");
+                        }
                         // encounter next German title
                         if (className.matches("c\\sx3\\sy([0-9a-f]+)\\sw4\\shf")) {
                             divIndex--;
@@ -217,18 +249,26 @@ public class HtmlConverter {
                         }
                         divIndex++;
 
+                        if (className.equals("c x10 y113 wa h1")) {
+                            System.out.println("here");
+                        }
                         if (meetSectionEnd) {
                             for (Map.Entry<String, String> keyEntry : tempModuleKey.entrySet()) {
                                 String[] keyCoords = keyEntry.getKey().split(" ");
                                 int keyX = Integer.parseInt(keyCoords[0]);
+                                String keyKey = keyEntry.getValue();
 
                                 StringBuilder concatenatedValues = new StringBuilder();
+
+                                if (module.keySet().contains(keyKey) && !module.get(keyKey).toString().isEmpty()) {
+                                    concatenatedValues.append(module.get(keyKey));
+                                }
 
                                 for (Map.Entry<String, String> valueEntry : tempModuleValue.entrySet()) {
                                     String[] valueCoords = valueEntry.getKey().split(" ");
                                     int valueX = Integer.parseInt(valueCoords[0]);
 
-                                    if (valueX == keyX) {
+                                    if (valueX == keyX || keyX == 0) {
                                         if (concatenatedValues.length() > 0) {
                                             concatenatedValues.append("; ");
                                         }
@@ -239,7 +279,16 @@ public class HtmlConverter {
                                 module.put(keyEntry.getValue(), concatenatedValues.toString());
 
                             }
+
                             tempModuleKey.clear();
+
+
+                            if (meetSectionEnd && !meetGermanTitle) {
+                                if (text.equals("BESONDERHEITEN") || text.equals("VORAUSSETZUNGEN") || text.equals("LITERATUR")) {
+                                    tempModuleKey.put("0 0", text);
+                                };
+                            }
+
                             tempModuleValue.clear();
 
                             meetSectionEnd = false;
