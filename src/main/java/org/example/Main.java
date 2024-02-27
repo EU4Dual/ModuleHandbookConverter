@@ -92,9 +92,9 @@ public class Main {
                     validFileList.add(validFile);
                 }
             }
-            if (!fileType.equals(TypePdf)) {
-                System.out.println("Found " + validFileList.size() + " valid files in target folder");
-            }
+//            if (!fileType.equals(TypePdf)) {
+//                System.out.println("Found " + validFileList.size() + " valid files in target folder");
+//            }
             System.out.println("Process started");
             int count = 1;
             // input files are Excel

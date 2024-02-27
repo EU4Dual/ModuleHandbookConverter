@@ -4,9 +4,306 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="handled section span over two pages issue; handled missing loop in last module issue">
+    <list default="true" id="5da33fce-4523-48eb-8102-5b974770b57b" name="Changes" comment="edited converter to handle all modulhandbuch">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Elektrotechnik_Energie-_und_Umwelttechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Elektrotechnik_Fahrzeugelektronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Elektrotechnik_Nachrichtentechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Embedded_Systems_Aerospace_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Embedded_Systems_Automotive_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Informatik_Informationstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Luft-_und_Raumfahrttechnik_Luft-_und_Raumfahrtelektronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Luft-_und_Raumfahrttechnik_Luft-_und_Raumfahrtsysteme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Maschinenbau_Allgemeiner_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Maschinenbau_Fahrzeug-System-Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Wirtschaftsingenieurwesen_Elektrotechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/FN/FN_Wirtschaftsingenieurwesen_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Angewandte_Gesundheits-_und_Pflegewissenschaften_Angewandte_Gesundheits-_und_Pflegewissenschaften.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Angewandte_Hebammenwissenschaft_Angewandte_Hebammenwissenschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Digital_Commerce_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Marketing_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Spedition_Transport_und_Logistik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Betriebswirtschaftslehre_Versicherung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Informatik_Informationstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Informatik_Medizinische_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Interprofessionelle_Gesundheitsversorgung_Interprofessionelle_Gesundheitsversorgung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Maschinenbau_Allgemeiner_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Medizintechnische_Wissenschaften_Medizintechnische_Wissenschaften.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Soziale_Arbeit_Case_Management_im_Sozial-_und_Gesundheitswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Soziale_Arbeit_Erziehungshilfen___Kinder-_und_Jugendhilfe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Soziale_Arbeit_Jugend-_Familien-_und_Sozialhilfe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Soziale_Arbeit_Soziale_Arbeit_mit_aelteren_Menschen_und_Buergerschaftliches_Engagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Soziale_Arbeit_Sozialmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Wirtschaftsinformatik_Business_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Wirtschaftsingenieurwesen_Allgemeines_Wirtschaftsingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HDH/HDH_Wirtschaftsingenieurwesen_Chemie-_und_Verfahrenstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Betriebswirtschaftslehre_Dienstleistungsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Betriebswirtschaftslehre_Digital_Commerce_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Betriebswirtschaftslehre_Food_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Betriebswirtschaftslehre_Technical_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Wein_-_Technologie_-_Management_Wein_-_Technologie_-_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Wirtschaftsinformatik_Business_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HN/HN_Wirtschaftsinformatik_Software_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Elektrotechnik_Elektronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Maschinenbau_KFZ-Prueftechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Maschinenbau_Kunststofftechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Maschinenbau_Versorgungs-_und_Energiemanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Mechatronik_Fahrzeugsystemtechnik_und_Elektromobilitaet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Wirtschaftsingenieurwesen_Allgemeines_Wirtschaftsingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/HOR/HOR_Wirtschaftsingenieurwesen_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Angewandte_Gesundheits-_und_Pflegewissenschaften_Angewandte_Gesundheits-_und_Pflegewissenschaften.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Angewandte_Hebammenwissenschaft_Angewandte_Hebammenwissenschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Deutsch-Franzoesisches_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Digital_Commerce_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Betriebswirtschaftslehre_Versicherung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Elektrotechnik_Nachrichtentechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Informatik_Angewandte_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Informatik_Informationstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Informatik_Medizinische_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Maschinenbau_Allgemeiner_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Papiertechnik_Papiererzeugung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Papiertechnik_Verpackungsherstellung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Physician_Assistant___Arztassistent_Physician_Assistant___Arztassistent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Rechnungswesen_Steuern_Wirtschaftsrecht_Steuern_und_Pruefungswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sicherheitswesen_Arbeitssicherheit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sicherheitswesen_Strahlenschutz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sicherheitswesen_Umwelttechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sustainable_Science_and_Technology_Arbeitssicherheit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sustainable_Science_and_Technology_Papiertechnologie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sustainable_Science_and_Technology_Strahlenschutz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sustainable_Science_and_Technology_Umweltschutztechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Sustainable_Science_and_Technology_Verpackungstechnologie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Unternehmertum_Unternehmertum.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Wirtschaftsinformatik_Sales_&amp;_Consulting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Wirtschaftsinformatik_Software_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/KA/KA_Wirtschaftsingenieurwesen_Allgemeines_Wirtschaftsingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Architektur_Architektur.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Finanzdienstleistungen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Gesundheitsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Personalmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Spedition_Transport_und_Logistik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Betriebswirtschaftslehre_Tourismus_Hotellerie_und_Gastronomie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Data_Science_und_Kuenstliche_Intelligenz_Data_Science_und_Kuenstliche_Intelligenz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Elektrotechnik_Elektronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_International_Business_Management_Trinational_International_Business_Management_Trinational.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Interprofessionelle_Gesundheitsversorgung_Interprofessionelle_Gesundheitsversorgung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Maschinenbau_Allgemeiner_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Mechatronik_Trinational_Mechatronik_Trinational.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Physiotherapie_Physiotherapie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Wirtschaftsinformatik_Application_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Wirtschaftsingenieurwesen_Elektrotechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/LOe/LOe_Wirtschaftsingenieurwesen_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Angewandte_Gesundheits-_und_Pflegewissenschaften_Angewandte_Gesundheits-_und_Pflegewissenschaften.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Digital_Commerce_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Finanzdienstleistungen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Gesundheitsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Immobilienwirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Marketing_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Messe-_Kongress-_und_Eventmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Oeffentliche_Wirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Spedition_Transport_und_Logistik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Betriebswirtschaftslehre_Versicherung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Chemische_Technik_Chemie-_und_Bioingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Chemische_Technik_Technische_und_Angewandte_Chemie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Data_Science_und_Kuenstliche_Intelligenz_Data_Science_und_Kuenstliche_Intelligenz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Elektrotechnik_Elektrische_Energietechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Elektrotechnik_Elektronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Elektrotechnik_Energie-_und_Umwelttechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Elektrotechnik_Medizintechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Informatik_Angewandte_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Informatik_Cyber_Security.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Informatik_Informationstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Integrated_Engineering_Projekt_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Integrated_Engineering_Service_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Maschinenbau_Allgemeiner_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Maschinenbau_Verfahrenstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Maschinenbau_Versorgungs-_und_Energiemanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Mechatronik_Energiewirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Mechatronik_Fahrzeugsystemtechnik_und_Elektromobilitaet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Mechatronik_Projekt_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Mechatronik_Service-Ingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Medien_Digitale_Medien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Medizintechnik_Medizintechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Rechnungswesen_Steuern_Wirtschaftsrecht_Accounting_&amp;_Controlling.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Rechnungswesen_Steuern_Wirtschaftsrecht_Steuern_und_Pruefungswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_Application_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_E-Government.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_E-Health.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_International_Management_for_Business_and_Information_Technology.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_Sales_&amp;_Consulting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsinformatik_Software_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsingenieurwesen_Allgemeines_Wirtschaftsingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsingenieurwesen_Chemie-_und_Verfahrenstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsingenieurwesen_Elektrotechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MA/MA_Wirtschaftsingenieurwesen_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MGH/MGH_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MGH/MGH_Betriebswirtschaftslehre_Gesundheitsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MGH/MGH_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MGH/MGH_Informatik_Angewandte_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MGH/MGH_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MGH/MGH_Wirtschaftsingenieurwesen_Allgemeines_Wirtschaftsingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Bauingenieurwesen_Fassadentechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Bauingenieurwesen_Oeffentliches_Bauen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Bauingenieurwesen_Projektmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Data_Science_und_Kuenstliche_Intelligenz_Data_Science_und_Kuenstliche_Intelligenz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Holztechnik_Holz-_und_Kunststofftechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Holztechnik_Holztechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Holztechnik_Wirtschaftsingenieurwesen_Holztechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Informatik_Angewandte_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Maschinenbau_Kunststofftechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Maschinenbau_Lebensmitteltechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Maschinenbau_Verfahrenstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Maschinenbau_Virtual_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Medien_Onlinemedien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Rechnungswesen_Steuern_Wirtschaftsrecht_Betriebswirtschaftliche_Steuerlehre_Unternehmensrechnung_und_Finanzen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Sustainable_Management_Sustainable_Management_in_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Sustainable_Management_Sustainable_Management_in_Technology.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Wirtschaftsinformatik_Application_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Wirtschaftsingenieurwesen_Allgemeines_Wirtschaftsingenieurwesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/MOS/MOS_Wirtschaftsingenieurwesen_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Agrarwirtschaft_Agrarwirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Finanzdienstleistungen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Gesundheitsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Medien-_und_Kommunikationswirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Messe-_Kongress-_und_Eventmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Betriebswirtschaftslehre_Tourismus_Hotellerie_und_Gastronomie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Data_Science_und_Kuenstliche_Intelligenz_Data_Science_und_Kuenstliche_Intelligenz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Medien_Mediendesign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Wirtschaftsinformatik_Business_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/RV/RV_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Angewandte_Gesundheits-_und_Pflegewissenschaften_Angewandte_Gesundheits-_und_Pflegewissenschaften.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Angewandte_Hebammenwissenschaft_-_berufsintegrierend_Angewandte_Hebammenwissenschaft_-_berufsintegrierend.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Angewandte_Hebammenwissenschaft_Angewandte_Hebammenwissenschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Angewandte_Pflegewissenschaft_Angewandte_Pflegewissenschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Dienstleistungsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Digital_Commerce_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Finanzdienstleistungen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Gesundheitsmanagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Handel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Handwerk.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Immobilienwirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Betriebswirtschaftslehre_Versicherung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Elektrotechnik_Automation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Elektrotechnik_Elektronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Elektrotechnik_Nachrichtentechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Embedded_Systems_General_Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Informatik_Angewandte_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Informatik_IT_Automotive.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Informatik_Informatik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Informatik_Informationstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Maschinenbau_Allgemeiner_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Maschinenbau_Fahrzeug-System-Engineering.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Maschinenbau_Konstruktion_und_Entwicklung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Maschinenbau_Produktionstechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Mechatronik_Allgemeine_Mechatronik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Mechatronik_Fahrzeugsystemtechnik_und_Elektromobilitaet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Rechnungswesen_Steuern_Wirtschaftsrecht_Accounting_&amp;_Controlling.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Rechnungswesen_Steuern_Wirtschaftsrecht_Steuern_und_Pruefungswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Rechnungswesen_Steuern_Wirtschaftsrecht_Wirtschafts-_und_Steuerrecht.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Rechnungswesen_Steuern_Wirtschaftsrecht_Wirtschaftspruefung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Arbeit_-_Integration_-_Soziale_Sicherung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Erziehungshilfen___Kinder-_und_Jugendhilfe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Jugend-_Familien-_und_Sozialhilfe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Kinder-_und_Jugendarbeit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Soziale_Arbeit_im_Gesundheitswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Soziale_Arbeit_in_Pflege_und_Rehabilitation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Soziale_Arbeit_in_der_Elementarpaedagogik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Soziale_Arbeit_Soziale_Dienste_in_der_Justiz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsinformatik_Application_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsinformatik_Data_Science.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsinformatik_International_Management_for_Business_and_Information_Technology.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsinformatik_Sales_&amp;_Consulting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsingenieurwesen_Elektrotechnik.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsingenieurwesen_Facility_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/STG/STG_Wirtschaftsingenieurwesen_Maschinenbau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Betriebswirtschaftslehre_Bank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Betriebswirtschaftslehre_Controlling_&amp;_Consulting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Betriebswirtschaftslehre_Digital_Business_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Betriebswirtschaftslehre_Industrie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Betriebswirtschaftslehre_International_Business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Betriebswirtschaftslehre_Technical_Management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Rechnungswesen_Steuern_Wirtschaftsrecht_Steuern_und_Pruefungswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Rechnungswesen_Steuern_Wirtschaftsrecht_Wirtschaftspruefung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Soziale_Arbeit_Bildung_und_Beruf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Soziale_Arbeit_Jugend-_Familien-_und_Sozialhilfe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Soziale_Arbeit_Netzwerk-_und_Sozialraumarbeit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Soziale_Arbeit_Soziale_Arbeit_-_Menschen_mit_Behinderung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Soziale_Arbeit_Soziale_Arbeit_-_Psychische_Gesundheit_und_Sucht.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Soziale_Arbeit_Soziale_Arbeit_im_Gesundheitswesen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Sozialwirtschaft_Sozialwirtschaft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/VS/VS_Wirtschaftsinformatik_Business_Engineering.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AllKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AllKeys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/html/Automation.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +519,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708933397102</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added regex to match module german title">
+      <option name="closed" value="true" />
+      <created>1708958491965</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708958491965</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added class">
+      <option name="closed" value="true" />
+      <created>1708958519663</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708958519663</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +567,10 @@
     <MESSAGE value="added script to batch convert PDFs to HTMLs" />
     <MESSAGE value="modified algo to scan cell within section headers" />
     <MESSAGE value="handled section span over two pages issue; handled missing loop in last module issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="handled section span over two pages issue; handled missing loop in last module issue" />
+    <MESSAGE value="added regex to match module german title" />
+    <MESSAGE value="added class" />
+    <MESSAGE value="edited converter to handle all modulhandbuch" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited converter to handle all modulhandbuch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,16 +596,29 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="41" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter3.java</url>
+          <line>213</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter3.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java</url>
-          <line>247</line>
-          <option name="timeStamp" value="68" />
+          <line>168</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/HtmlConverter.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ModuleHandbookConverter$main.ic" NAME="main Coverage Results" MODIFIED="1709019713170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
