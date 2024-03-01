@@ -169,41 +169,6 @@ public class HtmlConverter {
                     Map<String, String> module = new HashMap<>(info);
                     Map<String, String> tempModuleKey = new HashMap<>();
                     Map<String, String> tempModuleValue = new HashMap<>();
-//                    // Studienakademie
-//                    key = "STUDIENAKADEMIE";
-//                    value = div.text();
-//                    module.put(key, value);
-//                    divIndex += 2;
-//
-//                    // Studienrichtung
-//                    div = divs.get(divIndex);
-//                    key = "STUDIENRICHTUNG_DE";
-//                    value = div.text().split(" // ")[0];
-//                    module.put(key, value);
-//                    key = "STUDIENRICHTUNG_EN";
-//                    value = div.text().split(" // ")[1];
-//                    module.put(key, value);
-//                    divIndex += 2;
-//
-//                    // Studiengang
-//                    div = divs.get(divIndex);
-//                    key = "STUDIENGANG_DE";
-//                    value = div.text().split(" // ")[0];
-//                    module.put(key, value);
-//                    key = "STUDIENGANG_EN";
-//                    value = div.text().split(" // ")[1];
-//                    module.put(key, value);
-//                    divIndex += 2;
-//
-//                    // Studienbereich
-//                    div = divs.get(divIndex);
-//                    key = "STUDIENBEREICH_DE";
-//                    value = div.text().split(" // ")[0];
-//                    module.put(key, value);
-//                    key = "STUDIENBEREICH_EN";
-//                    value = div.text().split(" // ")[1];
-//                    module.put(key, value);
-//                    divIndex += 2;
 
                     // german module title
                     div = divs.get(divIndex);
@@ -211,6 +176,10 @@ public class HtmlConverter {
                     value = div.text().split(" \\(")[0];
                     module.put(key, value);
                     divIndex += 2;
+
+                    while (!divs.get(divIndex).className().startsWith("c")) {
+                        divIndex++;
+                    }
 
                     // english module title
                     div = divs.get(divIndex);

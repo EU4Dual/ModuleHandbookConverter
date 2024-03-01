@@ -1,9 +1,6 @@
 package org.example;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVPrinter;
-import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.csv.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 
@@ -33,7 +30,7 @@ public class CsvConverter {
             System.out.println("Done");
 
             // write to output file
-            writeModuleListToCSV(moduleList, outputFolderPath + File.separator + "module-reformatted.csv");
+            writeModuleListToCSV(moduleList, outputFolderPath + File.separator + "module-reformatted-new.csv");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -103,7 +100,7 @@ public class CsvConverter {
         // Convert the set of keys to an array for CSV header
         String[] headers = allKeys.toArray(new String[0]);
 
-        try (CSVPrinter csvPrinter = new CSVPrinter(new FileWriter(outputPath), CSVFormat.DEFAULT.withHeader(headers))) {
+        try (CSVPrinter csvPrinter = new CSVPrinter(new FileWriter(outputPath), CSVFormat.DEFAULT.withHeader(headers).withQuoteMode(QuoteMode.ALL))) {
             for (Map<String, String> module : moduleList) {
                 // Create a record array with values for each header
                 String[] record = allKeys.stream().map(module::get).toArray(String[]::new);
